@@ -1,0 +1,28 @@
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+  devtools:
+    restart:
+      enable: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+zuul:
+  routes:
+    gateway-chat:
+      path: /chat/**
+      url: http://127.0.0.1:8765/
+#      url: http://127.0.0.1:60001/
+#      serviceId: service-feignclient
+
+### Hystrix 配置
+hystrix: 
+  command: 
+    default: 
+      execution: 
+        isolation:
+          thread: 
+            timeoutInMilliseconds: 12000

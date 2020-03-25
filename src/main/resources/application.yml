@@ -17,12 +17,3 @@ zuul:
       url: http://127.0.0.1:8765/
 #      url: http://127.0.0.1:60001/
 #      serviceId: service-feignclient
-
-### Hystrix 配置
-hystrix: 
-  command: 
-    default: 
-      execution: 
-        isolation:
-          thread: 
-            timeoutInMilliseconds: 12000
